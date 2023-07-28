@@ -1,0 +1,69 @@
+<div class="table">
+  <app-filters (onSearchTitle)="applySearchTitle($event)" (onSort)="applySort($event)" (onSearchId)="applySearchId($event)"></app-filters>
+
+  <table mat-table [dataSource]="getCurrentPageData()">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="title"> 
+      <th mat-header-cell *matHeaderCellDef> No </th>
+      <td mat-cell *matCellDef="let element" (click)="goToDetailView(element.id)" style="cursor: pointer;"> {{ element.id }} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="position"> <!-- Update matColumnDef to "position" -->
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{ element.title }} </td>
+    </ng-container>
+    <!-- Address Column -->
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element"> {{ element.address }} </td>
+    </ng-container>
+
+    <!-- Beds Column -->
+    <ng-container matColumnDef="beds">
+      <th mat-header-cell *matHeaderCellDef> Beds </th>
+      <td mat-cell *matCellDef="let element"> {{ element.beds }} </td>
+    </ng-container>
+
+    <!-- Bath Column -->
+    <ng-container matColumnDef="bath">
+      <th mat-header-cell *matHeaderCellDef> Bath</th>
+      <td mat-cell *matCellDef="let element"> {{ element.bath }} </td>
+    </ng-container>
+
+    <!-- CoveredAreaSQFT Column -->
+    <ng-container matColumnDef="coveredAreaSQFT">
+      <th mat-header-cell *matHeaderCellDef> CoveredAreaSQFT</th>
+      <td mat-cell *matCellDef="let element"> {{ element.coveredAreaSQFT }} </td>
+    </ng-container>
+
+    <!-- PropertyType Column -->
+    <ng-container matColumnDef="propertyType">
+      <th mat-header-cell *matHeaderCellDef> PropertyType</th>
+      <td mat-cell *matCellDef="let element"> {{ element.propertyType }} </td>
+    </ng-container>
+
+    <!-- IsCommercial Column -->
+    <ng-container matColumnDef="isCommercial">
+      <th mat-header-cell *matHeaderCellDef> IsCommercial</th>
+      <td mat-cell *matCellDef="let element"> {{ element.sCommercial }} </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price</th>
+      <td mat-cell *matCellDef="let element"> {{ element.price }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<div class="pagination-controls">
+  <button (click)="setPage(1)">First</button>
+  <button (click)="setPage(currentPage - 1)" >Previous</button>
+  <span>{{ currentPage }} / {{ totalPages }}</span>
+  <button (click)="setPage(currentPage + 1)">Next</button>
+  <button (click)="setPage(totalPages)">Last</button>
+</div>

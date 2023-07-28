@@ -1,0 +1,24 @@
+<div class="filters">
+  <form class="filter-form">
+    <input
+      type="search"
+      name="search"
+      placeholder="Search by Name Ex: title 1"
+      class="search-input"
+      [(ngModel)]="searchInput"
+      (ngModelChange)="handleSearchTitle()"
+    />
+    <select name="sort" (ngModelChange)="handleSort()"  class="select-box" [(ngModel)]="sortOption" style="margin-left: 10px;">
+      <option value="newest">Newest</option>
+      <option value="older">Older</option>
+    </select>
+    <input
+      type="search"
+      name="filterbyid"
+      placeholder="Enter Price"
+      class="filter-input"
+      [(ngModel)]="searchIdInput"
+      (ngModelChange)="handleSearchByPrice()"
+    />
+  </form>
+</div>

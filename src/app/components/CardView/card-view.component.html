@@ -1,0 +1,21 @@
+<div class="grid-container">
+<ng-container *ngFor="let card of cardsData">
+  <mat-card class="card" style="cursor: pointer" (click)="goToDetailsPage(card.id)">
+    <mat-card-header>
+      <mat-card-title-group>
+        <img mat-card-image src="https://source.unsplash.com/random/300x200?sig=${Math.random()}" width="200px" height="200px">
+        <mat-card-title>{{ card.title }}</mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Property Type:</strong> {{ card.propertyType }}</p>
+      <p><strong>Address:</strong> {{ card.address }}</p>
+      <p><strong>Beds:</strong> {{ card.beds }}</p>
+      <p><strong>Bath:</strong> {{ card.bath }}</p>
+      <p><strong>Covered Area:</strong> {{ card.coveredAreaSQFT }} sq. ft.</p>
+      <p><strong>Is Commercial:</strong> {{ card.sCommercial }}</p>
+      <p><strong>Price:</strong> ${{ card.price }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+</div>

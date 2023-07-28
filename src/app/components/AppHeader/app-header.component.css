@@ -1,0 +1,19 @@
+  .app-header {
+    background-color: #e81717;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heading-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+  }
+  

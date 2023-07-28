@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="buttons">
+    <button (click)="showCardView()" class="button" [class.active]="isCardView">Card View</button>
+    <button (click)="showDataTable()" class="button" [class.active]="isDataTable">Table View</button>
+  </div>
+  <div class="views">
+    <div *ngIf="isDataTable" class="table">
+      <app-data-table></app-data-table>
+    </div>
+    <div *ngIf="isCardView">
+      <app-card-view></app-card-view>
+    </div>
+  </div>
+</div>

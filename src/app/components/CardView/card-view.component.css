@@ -1,0 +1,59 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.mat-card {
+  max-width: 100%;
+}
+
+/* data-table.component.css */
+
+/* Pagination controls container */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Pagination buttons */
+.pagination-controls button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination-controls button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Disabled buttons */
+.pagination-controls button[disabled] {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+/* Current page indicator */
+.pagination-controls span {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for laptops and larger devices */
+@media screen and (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
